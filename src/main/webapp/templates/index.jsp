@@ -1,5 +1,7 @@
 
-<%@ include file="templates/base/header.jsp"%>
+<%@ include file="base/header.jsp"%>
+
+<%@ include file="base/navbar.jsp"%>
 
 <div class="container text-center">
 	<div class="jumbotron jumbotron-fluid">
@@ -11,4 +13,4 @@ como Controle de dependencias e automatizador de contrução</p>
 	</div>
 </div>
 
-<%@ include file="templates/base/footer.jsp"%>
+<%@ include file="base/footer.jsp"%>
