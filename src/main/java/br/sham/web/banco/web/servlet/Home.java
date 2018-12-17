@@ -1,4 +1,4 @@
-package br.sham.web.banco.web;
+package br.sham.web.banco.web.servlet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +20,9 @@ public class Home implements Task  {
 		usuario.setPassword("123");
 		usuario.setUsuario("sham");
 		
-		serviceUsuario.cadastro(usuario);
+		//serviceUsuario.cadastro(usuario);
+		
+		System.out.println(serviceUsuario.getUsuarioByUsuario(usuario.getUsuario()));
 		
 		return "/WEB-INF/templates/home.jsp";
 	}

@@ -44,6 +44,12 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.2.8.Final</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 
 		<!-- BD connector -->
 		<dependency>

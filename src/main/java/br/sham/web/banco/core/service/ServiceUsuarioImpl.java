@@ -2,6 +2,7 @@ package br.sham.web.banco.core.service;
 
 import br.sham.web.banco.api.model.Usuario;
 import br.sham.web.banco.api.service.ServiceUsuario;
+import br.sham.web.banco.api.util.Hash;
 import br.sham.web.banco.core.dao.UsuarioDAOMysql;
 
 public class ServiceUsuarioImpl implements ServiceUsuario {
@@ -22,13 +23,39 @@ public class ServiceUsuarioImpl implements ServiceUsuario {
 	}
 
 	@Override
-	public Usuario login(String username) {
-		return uDAO.getUsuarioByUsuario(username);
+	public Usuario getUsuarioByUsuario(String username) {
+		try {
+			return uDAO.getUsuarioByUsuario(username);
+		} catch (Exception e) {
+			// e.printStackTrace();
+		}
+		return null;
+
 	}
 
 	@Override
-	public Usuario cadastro(Usuario usuario) {
-		return uDAO.createUsuario(usuario);
+	public Usuario createUsuario(Usuario usuario) {
+
+		try {
+			return uDAO.createUsuario(usuario);
+		} catch (Exception e) {
+			// e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Usuario login(String username, String password) {
+		Usuario usuario = this.getUsuarioByUsuario(username);
+		if (usuario != null) {
+			password = Hash.criptografar(password);
+			if (usuario.getPassword().equals(password)) {
+				usuario.setPassword(null);
+				return usuario;
+			}
+		}
+
+		return null;
 	}
 
 }

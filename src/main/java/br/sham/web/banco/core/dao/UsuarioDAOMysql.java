@@ -1,14 +1,11 @@
 package br.sham.web.banco.core.dao;
 
-import java.nio.charset.StandardCharsets;
-
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import com.google.common.hash.Hashing;
-
 import br.sham.web.banco.api.dao.UsuarioDAO;
 import br.sham.web.banco.api.model.Usuario;
+import br.sham.web.banco.api.util.Hash;
 import br.sham.web.banco.api.util.JPAUtil;
 
 public class UsuarioDAOMysql implements UsuarioDAO {
@@ -40,7 +37,7 @@ public class UsuarioDAOMysql implements UsuarioDAO {
 	public Usuario getUsuarioByUsuario(String usuario) {
 		this.begin();
 		Usuario u = null;
-		String jqpl = "select u from Usuario where m.usuario = :pUsuario";
+		String jqpl = "select u from Usuario u where u.usuario = :pUsuario";
 		Query query = em.createQuery(jqpl);
 		query.setParameter("pUsuario", usuario);
 		u = (Usuario) query.getSingleResult();
@@ -51,15 +48,10 @@ public class UsuarioDAOMysql implements UsuarioDAO {
 	@Override
 	public Usuario createUsuario(Usuario usuario) {
 		this.begin();
-		usuario.setPassword(this.criptografar(usuario.getPassword()));
+		usuario.setPassword(Hash.criptografar(usuario.getPassword()));
 		this.em.persist(usuario);
 		this.commit();
 		return usuario;
-	}
-	
-	private String criptografar(String senha) {
-		return Hashing.sha256().hashString(senha, StandardCharsets.UTF_8).toString();
-		
 	}
 
 }

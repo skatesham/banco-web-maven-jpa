@@ -18,13 +18,15 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		Writer writer = resp.getWriter();
-		writer.write("NOT SUPPORTED!");
+		writer.write("<h1>NOT SUPPORTED!</h1>");
 
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		String pacote = "br.sham.web.banco.web.servlet.";
+		
 		// qual tarefa quero executar?
 
 		String tarefa = req.getParameter("task");
@@ -32,7 +34,7 @@ public class Controller extends HttpServlet {
 			throw new IllegalArgumentException("Você esqueceu de inserir uma tarefa");
 		}
 
-		String nomeDaClasse = "br.sham.web.banco.web." + tarefa;
+		String nomeDaClasse = pacote + tarefa;
 
 		try {
 
