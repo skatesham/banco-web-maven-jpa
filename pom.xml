@@ -45,12 +45,19 @@
 			<version>4.2.8.Final</version>
 		</dependency>
 
+		<!-- BD connector -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.27</version>
 		</dependency>
 
+		<!-- Criptografy lib -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
 
 		<!-- Fast develop Dependency -->
 		<dependency>
