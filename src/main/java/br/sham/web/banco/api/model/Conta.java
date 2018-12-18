@@ -27,7 +27,7 @@ public @Data class Conta {
 	private double saldo = 0;
 	
 	@OneToMany(mappedBy="conta")
-	private List<Movimentacao> movimentacoes = new LinkedList<>();;
+	private List<Movimentacao> movimentacoes = new LinkedList<>();
 	
 	public void print() {
 		System.out.println(this.toString());
