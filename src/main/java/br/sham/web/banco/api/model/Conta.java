@@ -1,5 +1,6 @@
 package br.sham.web.banco.api.model;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -23,9 +24,10 @@ public @Data class Conta {
 	private String numero;
 	private String banco;
 	private String agencia;
+	private double saldo = 0;
 	
 	@OneToMany(mappedBy="conta")
-	private List<Movimentacao> movimentacoes;
+	private List<Movimentacao> movimentacoes = new LinkedList<>();;
 	
 	public void print() {
 		System.out.println(this.toString());

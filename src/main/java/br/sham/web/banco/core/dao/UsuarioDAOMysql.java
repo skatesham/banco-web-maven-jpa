@@ -54,4 +54,16 @@ public class UsuarioDAOMysql implements UsuarioDAO {
 		return usuario;
 	}
 
+	@Override
+	public Usuario updateUsuario(Usuario usuario) {
+		this.begin();
+		if (usuario.getId() != null) {
+			this.em.merge(usuario);
+			this.commit();
+			return usuario;
+
+		}
+		return null;
+
+	}
 }

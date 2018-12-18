@@ -8,4 +8,6 @@ public interface UsuarioDAO {
 	
 	public Usuario createUsuario(Usuario usuario);
 	
+	public Usuario updateUsuario(Usuario usuario);
+	
 }

@@ -12,7 +12,6 @@ import br.sham.web.banco.api.model.Usuario;
 import br.sham.web.banco.api.service.ServiceUsuario;
 import br.sham.web.banco.core.service.ServiceUsuarioImpl;
 
-
 public class Login extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -31,10 +30,9 @@ public class Login extends HttpServlet {
 
 		String username = req.getParameter("usuario");
 		String password = req.getParameter("password");
-		
+
 		Usuario usuario = uDAO.login(username, password);
-		
-		System.out.println(usuario);
+
 		if (usuario == null) {
 			req.setAttribute("erro", true);
 			String endereço = "/WEB-INF/templates/login.jsp";
@@ -42,10 +40,10 @@ public class Login extends HttpServlet {
 		} else {
 			HttpSession session = req.getSession();
 			session.setAttribute("usuario", usuario);
-			
+			req.setAttribute("usuario", usuario);
 			String endereço = "/WEB-INF/templates/home.jsp";
 			req.getRequestDispatcher(endereço).forward(req, resp);
-			
+
 		}
 
 	}

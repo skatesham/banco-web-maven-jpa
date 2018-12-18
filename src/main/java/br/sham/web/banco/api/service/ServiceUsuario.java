@@ -10,4 +10,6 @@ public interface ServiceUsuario {
 	
 	public Usuario createUsuario(Usuario usuario);
 	
+	public Usuario updateUsuario(Usuario usuario);
+	
 }

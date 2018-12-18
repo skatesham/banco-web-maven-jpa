@@ -8,7 +8,10 @@
     <title>Banco Sham</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <!--  link rel="stylesheet" href="/static/css/styles.css"  -->
+    <style type="text/css">
+    <%@include file="/static/css/styles.css"%>
+    </style>
 </head>
 
-<body class="h-100 bg-warning">
+<body class="h-100">

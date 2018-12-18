@@ -50,12 +50,23 @@ public class ServiceUsuarioImpl implements ServiceUsuario {
 		if (usuario != null) {
 			password = Hash.criptografar(password);
 			if (usuario.getPassword().equals(password)) {
-				usuario.setPassword(null);
+				//usuario.setPassword(null);
 				return usuario;
 			}
 		}
 
 		return null;
+	}
+
+	@Override
+	public Usuario updateUsuario(Usuario usuario) {
+		try {
+			return uDAO.updateUsuario(usuario);
+		} catch (Exception e) {
+			// e.printStackTrace();
+		}
+		return null;
+
 	}
 
 }
