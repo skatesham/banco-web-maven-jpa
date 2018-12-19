@@ -19,5 +19,6 @@
   <classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar" sourcepath="M2_REPO/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/guava/guava/20.0/guava-20.0.jar" sourcepath="M2_REPO/com/google/guava/guava/20.0/guava-20.0-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/projectlombok/lombok/1.18.4/lombok-1.18.4.jar" sourcepath="M2_REPO/org/projectlombok/lombok/1.18.4/lombok-1.18.4-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar" sourcepath="M2_REPO/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar" sourcepath="M2_REPO/junit/junit/3.8.1/junit-3.8.1-sources.jar"/>
 </classpath>

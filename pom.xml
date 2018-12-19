@@ -77,6 +77,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- POSTGRES  -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901-1.jdbc4</version>
+		</dependency>
+
 		<!-- TESTES -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -109,8 +116,8 @@
 							<goal>copy</goal>
 						</goals>
 						<configuration>
-                    	<source>1.8</source>
-                    	<target>1.8</target>
+							<source>1.8</source>
+							<target>1.8</target>
 							<artifactItems>
 								<artifactItem>
 									<groupId>com.github.jsimone</groupId>

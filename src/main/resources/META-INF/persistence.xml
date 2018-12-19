@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-	version="2.0">	
+	version="2.0">
+	
 	<persistence-unit name="banco">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.sham.web.banco.api.model.Conta</class>
@@ -16,7 +17,8 @@
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost/banco" />
 			<property name="javax.persistence.jdbc.user" value="heroku" />
-			<property name="javax.persistence.jdbc.password" value="sham" />
+			<property name="javax.persistence.jdbc.password"
+				value="sham" />
 
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
@@ -24,5 +26,31 @@
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="banco-online">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.sham.web.banco.api.model.Conta</class>
+		<class>br.sham.web.banco.api.model.Movimentacao</class>
+		<class>br.sham.web.banco.api.model.Usuario</class>
+		<class>br.sham.web.banco.api.model.Categoria</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" /> <!-- DB Driver -->
+			<property name="javax.persistence.jdbc.url"
+				value="postgres://uiyihqzc:M2aUTJNGqGBKqJNYHXc-UDAFdDI7jKDU@nutty-custard-apple.db.elephantsql.com:5432/uiyihqzc" /> <!-- BD Mane -->
+			<property name="javax.persistence.jdbc.user"
+				value="uiyihqzc" /> <!-- DB User -->
+			<property name="javax.persistence.jdbc.password"
+				value="M2aUTJNGqGBKqJNYHXc-UDAFdDI7jKDU" /> <!-- DB Password -->
+
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- DB Dialect -->
+			<property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
+
+			<property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+			<property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+		</properties>
+
 	</persistence-unit>
 </persistence>

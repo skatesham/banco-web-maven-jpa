@@ -14,7 +14,8 @@ public class JPAUtil {
 	
 	public static EntityManager getEntityManager() {
 		if(emf == null) {
-			emf = Persistence.createEntityManagerFactory("banco");
+			//emf = Persistence.createEntityManagerFactory("banco");
+			emf = Persistence.createEntityManagerFactory("banco-online");
 		}
 		return emf.createEntityManager();
 	}
